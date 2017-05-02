@@ -1,1 +1,3 @@
-# eternal
+# Eternal
+
+* [Motivation](motivation.md)
