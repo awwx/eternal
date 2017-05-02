@@ -1,3 +1,3 @@
 # Eternal
 
-* [Motivation](motivation.md)
+* [Motivation](https://github.com/awwx/eternal/blob/master/Motivation.md)
