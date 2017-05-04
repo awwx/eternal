@@ -178,3 +178,54 @@ program?
 ```
 
 That's it.
+
+## Databases
+
+Most databases that offer serialized transactions only support writes
+on a single machine, and most databases which can be scaled up if
+needed to run on multiple machines only support reduced consistency
+guarantees such "eventual consistency".
+
+Which isn't to say that eventual consistency can't be useful for a
+program carefully designed to work around its limitations...
+
+Yet serializable transactions is a simple and powerful method of
+dealing with concurrency that "just works" (if you don't have *too*
+much contention)... and if you make any mistakes designing your
+program for reduced consistency you end up with a system that works
+*most* of the time... and on rare, random occasions has a bug.
+
+Which isn't any fun to debug at all.
+
+Especially since the bug isn't reproducible.  You can run your program
+*again*, and the bug won't show up, because it only manifests rarely.
+
+Now, if we have some *particular* situation where an eventual
+consistency database would be faster and we need that efficiency,
+nothing stops us from using an eventual consistency database for that
+particular data if we want to.
+
+However by *default* it would be great if we could have serialized
+transactions.
+
+[Google Cloud Datastore](https://cloud.google.com/datastore/) is an
+intriguing option.  It offers fully serializable transactions, and is
+a distributed database that can scale as much as you'd like to pay
+for.
+
+There's a catch though: writes to any one object using transactions
+are limited to one write per second, and you can't have any more than
+25 distinct objects participating in a transaction.
+
+Still, only data that *needs* to be mutable has to be part of the
+transaction.  If we're careful not to *unnecessarily* tag data as
+mutable (when it doesn't actually get changed), the 25 object limit
+might not be too terrible.
+
+There's also [CockroachDB](https://www.cockroachlabs.com/) that offers
+fully serializable transactions across a *cluster* of database machines.
+
+And, even a single-machine database like
+[PostgreSQL](https://www.postgresql.org/) can handle quite a lot if
+we're not unnecessarily burdening it with immutable data that doesn't
+*need* to be in the database.
