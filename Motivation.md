@@ -218,6 +218,13 @@ Scheme / Lisp, while also having full access to the many facilities
 available in the JavaScript runtime environment.
 
 
+## Building on Arc
+
+*talk about syntax*
+
+*not attempting to be backwards compatible*
+
+
 ## Concurrency
 
 Suppose we write a mobile phone app, where do we save our data?  We
