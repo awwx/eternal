@@ -14,8 +14,3 @@ And it's a high reward research project: if it does work out, it may dramaticall
 ## Patrons
 
 * [Jana Haggard](http://www.janahaggard.com/)
-
-
-## Support This Project
-
-[Become a patron](https://awwx.wufoo.com/forms/eternal-programming-language/)
