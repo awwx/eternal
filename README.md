@@ -9,8 +9,3 @@ This is a high risk research project: I have some ideas for how to make this not
 And it's a high reward research project: if it does work out, it may dramatically simplify this aspect of writing programs.
 
 * [Motivation](https://github.com/awwx/eternal/blob/master/Motivation.md)
-
-
-## Patrons
-
-* [Jana Haggard](http://www.janahaggard.com/)
